@@ -32,7 +32,7 @@ Symfony2
 
 To use this extension in a symfony2 project, you have 2 options:
 
-### Add a service "manually"
+### 1. Add a service "manually"
 
 ```yaml
 # app/config/config.yml
@@ -44,9 +44,9 @@ services:
             - { name: twig.extension }
 ```
 
-### Use the TwigTruncateBundle
+### 2. Use the TwigTruncateBundle
 
-See [Dzango/TwigTruncateBundle](https://github.com/dzango/TwigTruncateBundle)
+The [Dzango/TwigTruncateBundle](https://github.com/dzango/TwigTruncateBundle) will register the extension for you as a service.
 
 Usage
 -----
