@@ -17,9 +17,8 @@
         "twig/twig": "~1.12"
     },
     "autoload": {
-        "psr-0": { "Dzango\\Twig\\Extension": "" }
+        "psr-4": { "Dzango\\Twig\\Extension": "src" }
     },
-    "target-dir": "Dzango/Twig/Extension",
     "extra": {
         "branch-alias": {
             "dev-master": "0.1.x-dev"
