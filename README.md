@@ -3,6 +3,51 @@ TwigTruncateExtension
 
 A custom twig extension to truncate text while preserving HTML tags.
 
+Installation
+------------
+
+Add the library to your app's `composer.json`:
+
+```json
+    "require": {
+        "dzango/twig-truncate-extension": "~1.0",
+        ...
+    }
+
+```
+
+Add the extension to the `Twig_Environment`:
+
+```php
+
+use Dzango\Twig\Extension\Truncate;
+
+$twig = new Twig_Environment(...);
+
+$twig->addExtension(new Truncate());
+```
+
+Symfony2
+--------
+
+To use this extension in a symfony2 project, you have 2 options:
+
+### Add a service "manually"
+
+```yaml
+# app/config/config.yml
+
+services:
+    dzango.twig.truncate_extension:
+        class: Dzango\Twig\Extension\Truncate
+        tags:
+            - { name: twig.extension }
+```
+
+### Use the TwigTruncateBundle
+
+See [Dzango/TwigTruncateBundle](https://github.com/dzango/TwigTruncateBundle)
+
 Usage
 -----
 
@@ -20,7 +65,7 @@ The truncate filter accepts 4 arguments, all of which have sensible defaults and
 truncate($length = 500, $ending = '...', $exact = false, $considerHtml = true)
 ```
 
-* **length**: the maximum number of characters to display, excluding any HTML markup (default `500`)
+* **length**: the maximum number of characters to display, excluding any HTML markup (default `100`)
 * **ending**: The characters to be appended to the truncated string (default `...`)
 * **exact**: If set to true, the text may be cut off in the middle of a word. To avoid this, set this argument to false (default `false`)
 * **considerHtml**: If set to true, HTML markup will be ignored and left unchanged (default `true`)
