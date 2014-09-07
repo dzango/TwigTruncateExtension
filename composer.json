@@ -17,7 +17,7 @@
         "twig/twig": "~1.12"
     },
     "autoload": {
-        "psr-4": { "Dzango\\Twig\\Extension": "src" }
+        "psr-4": { "Dzango\\Twig\\Extension\\": "src" }
     },
     "extra": {
         "branch-alias": {
