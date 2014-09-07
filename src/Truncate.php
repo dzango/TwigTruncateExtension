@@ -87,7 +87,7 @@ class Truncate extends Twig_Extension
                 // calculate the length of the plain text part of the line; handle entities as one character
                 $content_length = strlen(preg_replace('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|[0-9a-f]{1,6};/i', ' ', $line_matchings[2]));
 
-                if ($total_length+$content_length> $length) {
+                if ($total_length + $content_length > $length) {
                     // the number of characters which are left
                     $left = $length - $total_length;
                     $entities_length = 0;
@@ -98,7 +98,7 @@ class Truncate extends Twig_Extension
                         // calculate the real length of all entities in the legal range
                         foreach ($entities[0] as $entity) {
 
-                            if ($entity[1]+1-$entities_length <= $left) {
+                            if ($entity[1] + 1 - $entities_length <= $left) {
                                 $left--;
                                 $entities_length += strlen($entity[0]);
                             } else {
@@ -108,7 +108,7 @@ class Truncate extends Twig_Extension
                         }
                     }
 
-                    $truncate .= substr($line_matchings[2], 0, $left+$entities_length);
+                    $truncate .= substr($line_matchings[2], 0, $left + $entities_length);
 
                     // maximum lenght is reached, so get off the loop
                     break;
@@ -118,7 +118,7 @@ class Truncate extends Twig_Extension
                 }
 
                 // if the maximum length is reached, get off the loop
-                if ($total_length>= $length) {
+                if ($total_length >= $length) {
                     break;
                 }
             }
