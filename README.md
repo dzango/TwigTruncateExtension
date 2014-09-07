@@ -70,10 +70,10 @@ truncate($length = 100, $ending = '...', $exact = false, $considerHtml = true)
 * **exact**: If set to true, the text may be cut off in the middle of a word. To avoid this, set this argument to false (default `false`)
 * **considerHtml**: If set to true, HTML markup will be ignored and left unchanged (default `true`)
 
-Compatibility with other filters or syntax
-------------------------------------------
+Markdown and raw content
+------------------------
 
-Because the `truncate` filter preserves HTML markup, it is perfectly aboe to handle rendered markdown content, as well as "raw" content (as rendered by the `raw` filter). For example, assuming your app has enabled a `markdown` twig filter for parsing markdown content, the following is fully supported:
+Because the `truncate` filter preserves HTML markup, it is perfectly able to handle rendered markdown content, as well as "raw" content (as rendered by the `raw` filter). For example, assuming your app has enabled a `markdown` twig filter for parsing markdown content, the following is fully supported:
 
 ```twig
 {{ "some ... very ... long ... markdown text"|markdown|raw|truncate }}
