@@ -62,7 +62,7 @@ The bundle exposes a `truncate` twig filter, which can be applied to any string.
 The truncate filter accepts 4 arguments, all of which have sensible defaults and can therefore be ignored most of the time:
 
 ```php
-truncate($length = 500, $ending = '...', $exact = false, $considerHtml = true)
+truncate($length = 100, $ending = '...', $exact = false, $considerHtml = true)
 ```
 
 * **length**: the maximum number of characters to display, excluding any HTML markup (default `100`)
