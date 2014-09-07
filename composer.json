@@ -1,0 +1,28 @@
+{
+    "name": "dzango/twig-truncate-extension",
+    "description": "A Twig extension to trunate text while preserving HTML tags",
+    "keywords": ["twig", "truncate"],
+    "homepage": "https://github.com/dzango/TwigTruncateExtension",
+    "type": "twig-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dzango SARL",
+            "email": "info@dzango.com",
+            "homepage": "http://www.dzango.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "twig/twig": "~1.12"
+    },
+    "autoload": {
+        "psr-0": { "Dzango\\Twig\\Extension": "" }
+    },
+    "target-dir": "Dzango/Twig/Extension",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
