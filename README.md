@@ -27,27 +27,6 @@ $twig = new Twig_Environment(...);
 $twig->addExtension(new Truncate());
 ```
 
-Symfony2
---------
-
-To use this extension in a symfony2 project, you have 2 options:
-
-### 1. Add a service "manually"
-
-```yaml
-# app/config/config.yml
-
-services:
-    dzango.twig.truncate_extension:
-        class: Dzango\Twig\Extension\Truncate
-        tags:
-            - { name: twig.extension }
-```
-
-### 2. Use the TwigTruncateBundle
-
-The [Dzango/TwigTruncateBundle](https://github.com/dzango/TwigTruncateBundle) will register the extension for you as a service.
-
 Usage
 -----
 
@@ -78,6 +57,27 @@ Because the `truncate` filter preserves HTML markup, it is perfectly able to han
 ```twig
 {{ "some ... very ... long ... markdown text"|markdown|raw|truncate }}
 ```
+
+Symfony2
+--------
+
+To use this extension in a symfony2 project, you have 2 options:
+
+### 1. Add a service "manually"
+
+```yaml
+# app/config/config.yml
+
+services:
+    dzango.twig.truncate_extension:
+        class: Dzango\Twig\Extension\Truncate
+        tags:
+            - { name: twig.extension }
+```
+
+### 2. Use the TwigTruncateBundle
+
+The [Dzango/TwigTruncateBundle](https://github.com/dzango/TwigTruncateBundle) will register the extension for you as a service.
 
 Credits
 -------
