@@ -57,7 +57,7 @@ The bundle exposes a `truncate` twig filter, which can be applied to any string.
 {{ "some ... very ... large ... text"|truncate }}
 ```
 
-### Arguments:
+### Arguments
 
 The truncate filter accepts 4 arguments, all of which have sensible defaults and can therefore be ignored most of the time:
 
@@ -73,7 +73,7 @@ truncate($length = 100, $ending = '...', $exact = false, $considerHtml = true)
 Compatibility with other filters or syntax
 ------------------------------------------
 
-The filter is fully compatible with the markdown syntax, as well as with the `raw` filter. Assuming your app has enabled a `markdown` twig filter for parsing markdown, the following is fully supported:
+Because the `truncate` filter preserves HTML markup, it is perfectly aboe to handle rendered markdown content, as well as "raw" content (as rendered by the `raw` filter). For example, assuming your app has enabled a `markdown` twig filter for parsing markdown content, the following is fully supported:
 
 ```twig
 {{ "some ... very ... long ... markdown text"|markdown|raw|truncate }}
