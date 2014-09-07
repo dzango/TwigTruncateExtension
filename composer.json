@@ -1,6 +1,6 @@
 {
     "name": "dzango/twig-truncate-extension",
-    "description": "A Twig extension to trunate text while preserving HTML tags",
+    "description": "A Twig extension to truncate text while preserving HTML tags",
     "keywords": ["twig", "truncate"],
     "homepage": "https://github.com/dzango/TwigTruncateExtension",
     "type": "twig-extension",
