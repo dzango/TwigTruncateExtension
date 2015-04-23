@@ -141,9 +141,6 @@ class Truncate extends Twig_Extension
             }
         }
 
-        // add the defined ending to the text
-        $truncate .= $ending;
-
         if ($considerHtml) {
 
             // close all unclosed html-tags
@@ -151,6 +148,9 @@ class Truncate extends Twig_Extension
                 $truncate .= '</' . $tag . '>';
             }
         }
+
+        // add the defined ending to the text
+        $truncate .= $ending;
 
         return $truncate;
     }
