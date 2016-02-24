@@ -23,6 +23,20 @@ class TruncateTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    public function testEnding()
+    {
+        $this->assertEquals(
+            'Foursc...',
+            $this->truncate->truncate(
+                'Fourscore and seven years ago, our forefathers',
+                9,
+                '...',
+                true,
+                false
+            )
+        );
+    }
+
     /**
      * @dataProvider dataProvider
      */
