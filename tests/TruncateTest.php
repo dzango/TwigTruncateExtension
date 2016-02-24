@@ -7,10 +7,26 @@ use Dzango\Twig\Extension\Truncate;
 
 class TruncateTest extends PHPUnit_Framework_TestCase
 {
+    protected $truncate;
+
+    public function testPlainText()
+    {
+        $this->assertEquals(
+            'Fourscore',
+            $this->truncate->truncate(
+                'Fourscore and seven years ago, our forefathers',
+                9,
+                '',
+                true,
+                false
+            )
+        );
+    }
+
     /**
      * @dataProvider dataProvider
      */
-    public function testTruncate($text, $length, $ending, $exact, $considerHtml, $expected)
+/*    public function testTruncate($text, $length, $ending, $exact, $considerHtml, $expected)
     {
         $truncate = new Truncate();
 
@@ -19,7 +35,7 @@ class TruncateTest extends PHPUnit_Framework_TestCase
             $truncate->truncate($text, $length, $ending, $exact, $considerHtml)
         );
     }
-
+*/
     public function dataProvider()
     {
         return array(
@@ -37,5 +53,10 @@ class TruncateTest extends PHPUnit_Framework_TestCase
             array('<div>Hi friend</div>', 2, '...', false, false, '...'),
             array('<div>Hi friend</div>', 5, '...', true, true, '<div>Hi fr</div>...'),
         );
+    }
+
+    protected function setUp()
+    {
+        $this->truncate = new Truncate();
     }
 }
