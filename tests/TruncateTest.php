@@ -39,6 +39,10 @@ class TruncateTest extends PHPUnit_Framework_TestCase
 
     public function testEndingLongerThanLength()
     {
+        $this->markTestSkipped(
+              'Unsupported use case.'
+        );
+
         $this->assertEquals(
             '..',
             $this->truncate->truncate(
