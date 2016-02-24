@@ -37,6 +37,20 @@ class TruncateTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    public function testEndingLongerThanLength()
+    {
+        $this->assertEquals(
+            '..',
+            $this->truncate->truncate(
+                'Fourscore and seven years ago, our forefathers',
+                2,
+                '...',
+                true,
+                false
+            )
+        );        
+    }
+
     /**
      * @dataProvider dataProvider
      */
