@@ -55,6 +55,20 @@ class TruncateTest extends PHPUnit_Framework_TestCase
         );        
     }
 
+    public function testCSSAttributes()
+    {
+        $this->assertEquals(
+            '<div style="color: red;">Foursc</div>...',
+            $this->truncate->truncate(
+                '<div style="color: red;">Fourscore and seven years ago, our forefathers</div>',
+                9,
+                '...',
+                true,
+                true
+            )
+        );
+    }
+
     /**
      * @dataProvider dataProvider
      */
