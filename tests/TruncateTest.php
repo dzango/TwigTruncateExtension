@@ -58,12 +58,12 @@ class TruncateTest extends PHPUnit_Framework_TestCase
     public function testCSSAttributes()
     {
         $this->assertEquals(
-            '<div style="color: red;">Foursc</div>...',
+            '<div style="color: red;"></div>...',
             $this->truncate->truncate(
                 '<div style="color: red;">Fourscore and seven years ago, our forefathers</div>',
                 9,
                 '...',
-                true,
+                false,
                 true
             )
         );
