@@ -108,7 +108,7 @@ class Truncate extends Twig_Extension
                         }
                     }
 
-                    $truncate .= substr($line_matchings[2], 0, $left + $entities_length);
+                    $truncate .= mb_substr($line_matchings[2], 0, $left + $entities_length);
 
                     // maximum lenght is reached, so get off the loop
                     break;
@@ -126,7 +126,7 @@ class Truncate extends Twig_Extension
             if (strlen($text) <= $length) {
                 return $text;
             } else {
-                $truncate = substr($text, 0, $length - strlen($ending));
+                $truncate = mb_substr($text, 0, $length - strlen($ending));
             }
         }
 
@@ -137,7 +137,7 @@ class Truncate extends Twig_Extension
 
             if (isset($spacepos)) {
                 // ...and cut the text in this position
-                $truncate = substr($truncate, 0, $spacepos);
+                $truncate = mb_substr($truncate, 0, $spacepos);
             }
         }
 
