@@ -136,10 +136,10 @@ class Truncate extends Twig_Extension
                 preg_match('/^((<.*?>)*)(.*)/', $truncate, $matches);
                 $truncate = $matches[3];
             }
-            // ...search the last occurance of a space...
+            // ...search the last occurrence of a space...
             $spacepos = strrpos($truncate, ' ');
 
-            if (isset($spacepos)) {
+            if ($spacepos > 0) {
                 // ...and cut the text in this position
                 $truncate = mb_substr($truncate, 0, $spacepos);
             }
@@ -156,7 +156,7 @@ class Truncate extends Twig_Extension
                 $truncate .= '</' . $tag . '>';
             }
         }
-   
+
         // add the defined ending to the text
         $truncate .= $ending;
 

@@ -17,14 +17,14 @@
         "twig/twig": "~1.12"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.8"
+        "phpunit/phpunit": "~4.8|~5.4"
     },
     "autoload": {
         "psr-4": { "Dzango\\Twig\\Extension\\": "src" }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1.x-dev"
+            "dev-master": "1.0.x-dev"
         }
     }
 }
