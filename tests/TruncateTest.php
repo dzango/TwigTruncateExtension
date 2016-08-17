@@ -8,67 +8,7 @@ use Dzango\Twig\Extension\Truncate;
 class TruncateTest extends PHPUnit_Framework_TestCase
 {
     protected $truncate;
-/*
-    public function testPlainText()
-    {
-        $this->assertEquals(
-            'Fourscore',
-            $this->truncate->truncate(
-                'Fourscore and seven years ago, our forefathers',
-                9,
-                '',
-                true,
-                false
-            )
-        );
-    }
 
-    public function testEnding()
-    {
-        $this->assertEquals(
-            'Foursc...',
-            $this->truncate->truncate(
-                'Fourscore and seven years ago, our forefathers',
-                9,
-                '...',
-                true,
-                false
-            )
-        );
-    }
-
-    public function testEndingLongerThanLength()
-    {
-        $this->markTestSkipped(
-              'Unsupported use case.'
-        );
-
-        $this->assertEquals(
-            '..',
-            $this->truncate->truncate(
-                'Fourscore and seven years ago, our forefathers',
-                2,
-                '...',
-                true,
-                false
-            )
-        );
-    }
-
-    public function testCSSAttributes()
-    {
-        $this->assertEquals(
-            '<div style="color: red;"></div>...',
-            $this->truncate->truncate(
-                '<div style="color: red;">Fourscore and seven years ago, our forefathers</div>',
-                9,
-                '...',
-                false,
-                true
-            )
-        );
-    }
-*/
     /**
      * @dataProvider dataProvider
      */
