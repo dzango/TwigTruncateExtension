@@ -132,12 +132,20 @@ class Truncate extends Twig_Extension
 
         // if the words shouldn't be cut in the middle...
         if (!$exact) {
+            if ($considerHtml){
+                preg_match('/^((<.*?>)*)(.*)/', $truncate, $matches);
+                $truncate = $matches[3];
+            }
             // ...search the last occurance of a space...
             $spacepos = strrpos($truncate, ' ');
 
             if (isset($spacepos)) {
                 // ...and cut the text in this position
                 $truncate = mb_substr($truncate, 0, $spacepos);
+            }
+
+            if ($considerHtml){
+                $truncate = $matches[1] . $truncate;
             }
         }
 
@@ -148,7 +156,7 @@ class Truncate extends Twig_Extension
                 $truncate .= '</' . $tag . '>';
             }
         }
-
+   
         // add the defined ending to the text
         $truncate .= $ending;
 
