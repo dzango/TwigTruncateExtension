@@ -53,8 +53,8 @@ class TruncateTest extends PHPUnit_Framework_TestCase
             array('<div>Fourscore and seven years ago</div>', 18, '...', false, true, '<div>Fourscore and</div>...'),
             array('<div style="color:red">Fourscore and seven years ago</div>', 9, '', true, true, '<div style="color:red">Fourscore</div>'),
             array('<div style="color:red">Fourscore and seven years ago</div>', 9, '', false, true, '<div style="color:red">Fourscore</div>'),
-            array('£^_{}|}~žščř"', 4, '', true, false, '£^_{'),
-            array('£^_{}|}~žščř"', 4, '', false, false, '£^_{'),
+            array('žš1čř£^_{}|}~žščř"', 4, '', true, false, 'žš1č'),
+            array('žš1čř£^_{}|}~žščř"', 4, '', false, false, 'žš1č'),
         );
     }
 
